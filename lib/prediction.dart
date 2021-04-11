@@ -562,24 +562,26 @@ class _PredictionState extends State<Prediction> {
                           getData().then((value) {
                             showDialog(
                                 context: context,
-                                child: Dialog(
-                                  child: Container(
-                                    color: Colors.pink.withOpacity(0.2),
-                                    height: 60,
-                                    width: 60,
-                                    child: Center(
-                                      child: Text(
-                                        result == 1
-                                            ? 'Survived!'
-                                            : 'Did not Survive!',
-                                        style: TextStyle(
-                                            fontFamily: 'IBMPlexSans',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 20),
+                                builder: (context) {
+                                  Dialog(
+                                    child: Container(
+                                      color: Colors.pink.withOpacity(0.2),
+                                      height: 60,
+                                      width: 60,
+                                      child: Center(
+                                        child: Text(
+                                          result == 1
+                                              ? 'Survived!'
+                                              : 'Did not Survive!',
+                                          style: TextStyle(
+                                              fontFamily: 'IBMPlexSans',
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ));
+                                  );
+                                });
                           });
                         },
                         child: Center(
